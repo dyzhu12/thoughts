@@ -1,4 +1,31 @@
 extends layout
 
 block content
-	h1= 'Hello World'
+	.container
+		.title-section(id='title-editable')
+			h1 Title
+		.content-section(id='content-editable')
+	script.
+		var titleEditor = new MediumEditor('#title-editable');
+		var contentEditor = new MediumEditor('#content-editable', {
+			buttonLabels: 'fontawesome',
+			toolbar: {
+				buttons: [
+					'bold',
+					'italic',
+					'underline',
+					'subscript',
+					'superscript',
+					'anchor',
+					'quote',
+					'orderedList',
+					'unorderedList',
+					'justifyLeft',
+					'justifyCenter',
+					'justifyRight',
+					'justifyFull',
+					'h1',
+					'h2'
+				]
+			}
+		});
