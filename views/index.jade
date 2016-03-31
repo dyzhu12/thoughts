@@ -1,9 +1,12 @@
 extends layout
 
 block content
+	nav.top-nav
+		a(id='nav-open')
+			i.material-icons menu
 	.container
 		.title-section(id='title-editable')
-			h1 Title
+			p Title
 		.content-section(id='content-editable')
 	script.
 		var titleEditor = new MediumEditor('#title-editable');
