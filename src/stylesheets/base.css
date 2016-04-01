@@ -4,19 +4,38 @@ html, body {
 }
 
 html {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 150%;
 }
 
-.top-nav {
-	position: fixed;
-	padding-left: 20px;
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
 }
 
 .container {
 	width: 75%;
 	margin: 0 auto;
 }
+
+.section {
+	padding: 20px 0;
+}
+
+.title-section {
+	font-family: 'Alegreya', serif;
+}
+
+#save-button {
+	padding: 10px;
+	background: #494949;
+	color: white;
+	border-style: none;
+	width: inherit;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
+
 
 #nav-open:visited {
 	color: black;
