@@ -34,8 +34,12 @@ h1, h2, h3, h4, h5, h6, p {
 	position: fixed;
 	bottom: 0;
 	text-align: center;
+	cursor: pointer;
 }
 
+#save-button:active {
+	background: #595959;
+}
 
 #nav-open:visited {
 	color: black;
