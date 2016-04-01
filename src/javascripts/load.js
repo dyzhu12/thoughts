@@ -6,12 +6,39 @@
 	var thoughtTitle = localStorage.getItem('thoughtTitle');
 	var thoughtContent = localStorage.getItem('thoughtContent');
 
-	titleContainer.insertAdjacentHTML('beforeend', thoughtTitle);
-	contentContainer.insertAdjacentHTML('beforeend', thoughtContent);
+	var elementFilter = [
+		'<p>',
+		'</p>',
+		'<br>',
+		'<h1>',
+		'</h1>',
+		'<h2>',
+		'</h2>',
+		'<h3>',
+		'</h3>',
+		'<h4>',
+		'</h4>',
+		'<h5>',
+		'</h5>',
+		'<h6>',
+		'</h6>'
+	];
+
+	elementFilter.forEach(function(element) {
+		thoughtTitle = thoughtTitle.replace(element, '');
+		thoughtContent = thoughtContent.replace(element, '');
+	});
+
+	if (thoughtTitle !== '') {
+		titleContainer.insertAdjacentHTML('beforeend', thoughtTitle);
+	}
+
+	if (thoughtContent !== '') {
+		contentContainer.insertAdjacentHTML('beforeend', thoughtContent);
+	}
 
 	var placeholderTitle = thoughtTitle === '' ? 'Title' : '';
-	var placeholderContent = thoughtContent === '' ? 'Type your text here' : '';
-
+	var placeholderContent = thoughtContent === '' ? 'Content' : '';
 
 	var titleEditor = new MediumEditor('#title-editable', {
 		placeholder: {
